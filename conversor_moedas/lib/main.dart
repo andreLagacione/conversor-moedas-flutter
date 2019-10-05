@@ -134,6 +134,10 @@ class _HomeState extends State<Home> {
                       buildTextFiled("Dolares", "US\$ ", this.dolarController, this._dolarChanged),
                       Divider(),
                       buildTextFiled("Euros", "€ ", this.euroController, this._euroChanged),
+                      Divider(),
+                      buildCurrencyValue("US\$ 1,00 = R\$ " +  dolar.toStringAsFixed(2)),
+                      Divider(),
+                      buildCurrencyValue("€ 1,00 = R\$ " + euro.toStringAsFixed(2)),
                     ],
                   ),
                 );
@@ -164,5 +168,15 @@ Widget buildTextFiled(String label, String prefix, TextEditingController control
     keyboardType: TextInputType.numberWithOptions(
       decimal: true
     ),
+  );
+}
+Widget buildCurrencyValue(String text) {
+  return Text(
+    text,
+    style: TextStyle(
+        color: Colors.amber,
+        fontSize: 25
+    ),
+    textAlign: TextAlign.center,
   );
 }
